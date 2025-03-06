@@ -1,6 +1,30 @@
-<html>
-<head></head>
-<body>
-<h1>asd</h1>
-</body>
-</html>
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; }
+      .container { max-width: 400px; margin: auto; }
+      input, button { width: 100%; padding: 10px; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <input type="text" id="name" placeholder="Enter your name">
+      <input type="email" id="email" placeholder="Enter your email">
+      <input type="tel" id="phone" placeholder="Enter your phone number">
+      <button onclick="submitForm()">Submit</button>
+    </div>
+    <script>
+      function submitForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        window.ReactNativeWebView.postMessage(JSON.stringify({ name, email, phone }));
+      }
+    </script>
+  </body>
+  </html>
